@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+ class vector                           
+{
+private:
+	float x , y ;
+public:
+vector(){x=0;y=0;}
+vector(float a){x=a;y=a;}
+vector(float a , float b){x=a;y=b;}
+
+void sety (float m){y=m;}
+void setx (float n){x=n;}
+	float gety(){return y;}
+	float getx(){return x;}
+	vector operator<<(vector u)
+	{
+       vector inc;
+	   inc.x=x+u.x;
+	   inc.y=y+u.y;
+	   return inc;
+	}
+};
+
+int  main ()
+{
+	vector p , v , z , u ; float a , b ,c=2;
+	cout<<"Enter 1'st Point "<<endl;
+	cin>>a>>b;
+	p.setx(a);  
+	p.sety(b);  
+	v=p.operator<<(c);
+	cout<<" Point << is : " <<v.getx()<<" , "<<v.gety()<<endl;
+	return 0;
+
+}
